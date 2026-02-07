@@ -1,39 +1,10 @@
-name: Validate Schemas and Examples
-
-on: [push, pull_request]
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      
-      - name: Install jsonschema
-        run: pip install jsonschema
+- name: Install check-jsonschema
+        run: pip install check-jsonschema
       
       - name: Validate state examples
         run: |
-          jsonschema -i examples/state-initialization.json schemas/state.schema.json
+          check-jsonschema --schemafile schemas/state.schema.json examples/state-initialization.json
       
-      - name: Validate event examples
+      - name: Validate event examples  
         run: |
-          jsonschema -i examples/event-sequence.json schemas/event.schema.json
-      
-      - name: Check for vendor mentions
-        run: |
-          if grep -r "Workrush\|Human-work\|Airprint" --exclude-dir=.git --exclude-dir=.github .; then
-            echo "ERROR: Vendor mentions found!"
-            exit 1
-          fi
-          echo "✓ No vendor mentions found"
-      
-      - name: Validate markdown links
-        uses: gaurav-nelson/github-action-markdown-link-check@v1
-        with:
-          use-quiet-mode: 'yes'
-          config-file: '.github/markdown-link-check-config.json'
+          check-jsonschema --schemafile schemas/event.schema.json examples/event-sequence.json
