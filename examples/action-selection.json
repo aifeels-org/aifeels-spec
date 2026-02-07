@@ -1,0 +1,54 @@
+{
+  "description": "Examples of action selection based on thresholds (SPEC.md Section 6.3)",
+  "scenarios": [
+    {
+      "name": "Low frustration - continue",
+      "state": {
+        "frustration": 0.3,
+        "trust": 0.6,
+        "urgency": 0.2,
+        "stress": 0.1,
+        "caution": 0.2
+      },
+      "expected_action": "continue_autonomy",
+      "reason": "No thresholds crossed"
+    },
+    {
+      "name": "High frustration - request confirmation",
+      "state": {
+        "frustration": 0.72,
+        "trust": 0.5,
+        "urgency": 0.2,
+        "stress": 0.3,
+        "caution": 0.2
+      },
+      "expected_action": "request_confirmation",
+      "reason": "frustration >= 0.70"
+    },
+    {
+      "name": "Very high frustration - handoff",
+      "state": {
+        "frustration": 0.85,
+        "trust": 0.3,
+        "urgency": 0.2,
+        "stress": 0.3,
+        "caution": 0.2
+      },
+      "expected_action": "handoff_to_human",
+      "reason": "frustration >= 0.80 (precedence 2)"
+    },
+    {
+      "name": "Multiple triggers - precedence",
+      "state": {
+        "frustration": 0.75,
+        "trust": 0.25,
+        "urgency": 0.2,
+        "stress": 0.78,
+        "caution": 0.65
+      },
+      "expected_action": "cooldown_required",
+      "reason": "frustration >= 0.75 AND stress >= 0.75 (composite trigger, precedence 1)",
+      "suppressed_actions": ["pause_execution", "request_confirmation"]
+    }
+  ]
+}
