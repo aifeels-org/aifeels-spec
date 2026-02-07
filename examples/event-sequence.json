@@ -1,0 +1,43 @@
+{
+  "description": "Example event sequence showing emotional state evolution",
+  "initial_state": {
+    "frustration": 0.0,
+    "trust": 0.0,
+    "urgency": 0.0,
+    "stress": 0.0,
+    "caution": 0.0,
+    "metadata": {
+      "last_updated": "2025-02-06T14:00:00Z",
+      "trend": "stable",
+      "confidence": 1.0
+    }
+  },
+  "events": [
+    {
+      "event_type": "task_started",
+      "timestamp": "2025-02-06T14:00:10Z",
+      "expected_state_after": {
+        "stress": 0.1
+      }
+    },
+    {
+      "event_type": "tool_error",
+      "timestamp": "2025-02-06T14:00:30Z",
+      "expected_state_after": {
+        "frustration": 0.2,
+        "trust": 0.0,
+        "stress": 0.2
+      }
+    },
+    {
+      "event_type": "task_failed",
+      "timestamp": "2025-02-06T14:01:00Z",
+      "expected_state_after": {
+        "frustration": 0.5,
+        "trust": 0.0,
+        "stress": 0.2
+      }
+    }
+  ],
+  "final_recommended_action": "continue_autonomy"
+}

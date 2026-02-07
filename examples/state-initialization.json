@@ -1,0 +1,15 @@
+{
+  "description": "Initial emotional state per SPEC.md Section 3.4.2",
+  "state": {
+    "frustration": 0.0,
+    "trust": 0.0,
+    "urgency": 0.0,
+    "stress": 0.0,
+    "caution": 0.0,
+    "metadata": {
+      "last_updated": "2025-02-06T14:30:00Z",
+      "trend": "stable",
+      "confidence": 1.0
+    }
+  }
+}
