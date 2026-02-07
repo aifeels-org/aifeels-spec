@@ -1,0 +1,39 @@
+{
+  "implementation": {
+    "name": "aifeels-reference",
+    "version": "0.1.0",
+    "language": "Python",
+    "repository": "https://github.com/aifeels-org/aifeels-reference",
+    "license": "Apache-2.0",
+    "description": "Official Python reference implementation of the Aifeels specification"
+  },
+  "spec_version": "0.1.0",
+  "test_suite_version": "0.1.0",
+  "test_results": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "errors": 0,
+    "pass_rate": 100.0
+  },
+  "certification_date": "2025-02-07",
+  "maintainer": {
+    "name": "Aifeels Maintainers",
+    "email": "hello@aifeels.org",
+    "github": "aifeels-org",
+    "organization": "Aifeels Project"
+  },
+  "conformance_statement": "This implementation is the official reference implementation and is fully conformant with the Aifeels Specification v0.1.0. All 10 required conformance tests pass.",
+  "documentation_urls": {
+    "readme": "https://github.com/aifeels-org/aifeels-reference/blob/main/README.md",
+    "api_docs": "https://github.com/aifeels-org/aifeels-reference/blob/main/docs/api.md",
+    "conformance_report": "https://github.com/aifeels-org/aifeels-reference/blob/main/CONFORMANCE.md"
+  },
+  "certification_history": [
+    {
+      "version": "0.1.0",
+      "date": "2025-02-07",
+      "status": "certified"
+    }
+  ]
+}

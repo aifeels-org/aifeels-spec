@@ -199,7 +199,187 @@ Proposed changes must:
 - Undergo community review
 - Be approved by maintainers
 
-## 11. Contact
+## 11. Succession Planning
+
+### Lead Maintainer Unavailability
+
+If the lead maintainer becomes unavailable:
+
+**Short-term (< 30 days):**
+- Other maintainers (if any) continue RFC reviews
+- Non-urgent decisions deferred
+- Emergency security patches allowed
+- Community discussions continue
+
+**Long-term (> 30 days):**
+- Remaining maintainers elect new lead (simple majority)
+- If no remaining maintainers, community nominates interim maintainer
+- Succession announced publicly in Discussions
+- New lead added to MAINTAINERS.md
+
+### Bus Factor Mitigation
+
+Current measures:
+- All processes documented in this GOVERNANCE.md
+- Specification is self-contained in SPEC.md
+- RFC process ensures community input
+- GitHub contains complete project history
+
+**Goals (by v1.0):**
+- Minimum 2 active maintainers
+- Geographic and organizational diversity
+- Documented knowledge transfer process
+
+### Emergency Contact
+
+If maintainers are unreachable: governance@aifeels.org
+
+(Monitored by multiple parties for continuity)
+
+---
+
+## 12. Technical Steering Committee (Future)
+
+### Formation Criteria
+
+A Technical Steering Committee (TSC) will be formed when:
+- Project has 5+ regular contributors
+- 3+ independent implementations exist
+- RFC volume exceeds single maintainer capacity
+
+### TSC Structure
+
+**Size:** 5-7 members
+
+**Composition:**
+- Active maintainers (2 seats)
+- Implementation authors (2-3 seats)
+- Community representatives (1-2 seats)
+
+**Terms:**
+- 1 year, renewable
+- Staggered terms (not all expire simultaneously)
+
+**Selection:**
+- Maintainers: Self-appointed
+- Others: Community nomination + vote
+
+### TSC Responsibilities
+
+- Approve RFCs requiring TSC review
+- Resolve maintainer conflicts
+- Set strategic direction (roadmap)
+- Manage trademark and certification
+- Appoint new maintainers
+
+### TSC Decision Making
+
+- **Quorum:** 60% of members
+- **Simple majority:** Most decisions
+- **2/3 majority:** Breaking changes, trademark policy
+- **All votes:** Documented publicly in Discussions
+
+---
+
+## 13. Conflict Resolution
+
+### RFC Disagreements
+
+1. **Discussion (14+ days):** Community discusses in RFC
+2. **Maintainer vote:** Accept or reject with rationale
+3. **Appeal:** Submitter can appeal with new evidence (7 days)
+4. **Final decision:** Maintainers have final authority
+
+### Maintainer Conflicts
+
+When maintainers disagree:
+
+1. **Private discussion** - Attempt consensus
+2. **Vote** - Simple majority if no consensus
+3. **Tie** - Status quo prevails (no change)
+4. **Escalation** - If serious, involve TSC (when formed)
+
+### Community Disputes
+
+1. **Code of Conduct** - All disputes subject to CODE_OF_CONDUCT.md
+2. **Reporting** - governance@aifeels.org
+3. **Investigation** - Maintainers investigate (7 days)
+4. **Resolution** - Warning, temp ban (7-30 days), or permanent ban
+5. **Appeal** - 14 days to appeal to different maintainer
+
+### Vendor Neutrality Violations
+
+If a decision appears to favor specific vendor:
+
+1. **Report** - governance@aifeels.org with evidence
+2. **Review** - Maintainers review decision (14 days)
+3. **Reversal** - If confirmed, decision reversed
+4. **Transparency** - Outcome announced publicly
+
+---
+
+## 14. Emergency Procedures
+
+### Security Vulnerabilities
+
+**Specification-level security issues:**
+
+1. **Report** - security@aifeels.org (private)
+2. **Acknowledgment** - Within 7 days
+3. **Assessment** - Severity and impact (14 days)
+4. **Fix** - Develop patch (target 30 days)
+5. **Disclosure** - 90 days or when fix ready (whichever sooner)
+6. **Announcement** - Public advisory with CVE (if applicable)
+
+**See SECURITY.md for complete process.**
+
+### Critical Spec Bugs
+
+If spec bug discovered that:
+- Breaks all implementations
+- Creates security risk
+- Makes spec unusable
+
+**Emergency process:**
+
+1. **Immediate acknowledgment** - Issue labeled "critical"
+2. **Expedited RFC** - 3-day review (vs. 14 days)
+3. **Patch release** - v0.1.1 with fix
+4. **Announcement** - All channels (GitHub, Discussions)
+5. **Migration guide** - Provided with patch
+
+### Maintainer Incapacity
+
+If all maintainers become unavailable:
+
+1. **Contact** - governance@aifeels.org
+2. **Interim** - Community nominates interim maintainer (Discussions)
+3. **Vote** - Community votes on interim (7 days)
+4. **Authority** - Interim has limited authority:
+   - Can merge security patches
+   - Can moderate discussions
+   - Cannot approve breaking changes
+5. **Restoration** - When original maintainers return or permanent replacement selected
+
+---
+
+## 15. Governance Version History
+
+This governance document is versioned:
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 2.0 | 2025-02-07 | Added succession planning, TSC, conflict resolution, emergency procedures |
+| 1.0 | 2025-02-06 | Initial governance framework |
+
+**Material changes** to governance require:
+- RFC with 30-day review period
+- Community consensus
+- Maintainer approval
+
+---
+
+## 16. Contact
 
 **Questions about governance:**  
 Open an issue: https://github.com/aifeels-org/aifeels-spec/issues
@@ -209,5 +389,5 @@ See [docs/FAQ.md](docs/FAQ.md) or open a discussion
 
 ---
 
-*Last updated: 2025-02-06*  
-*Governance version: 1.0*
+*Last Updated: 2025-02-07*  
+*Governance Version: 2.0*
