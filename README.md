@@ -95,3 +95,4 @@ Apache 2.0 - See [LICENSE](LICENSE)
 
 - Issues: https://github.com/aifeels-org/aifeels-spec/issues
 - Discussions: https://github.com/aifeels-org/aifeels-spec/discussions
+
